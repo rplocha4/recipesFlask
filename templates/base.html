@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body style="
+      background-color: #cce7ed;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      width: 100%;
+    ">
+    <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+
+</html>

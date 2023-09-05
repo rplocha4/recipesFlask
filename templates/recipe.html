@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}{{recipe.name}}{% endblock %}
+
+{% block content %}
+<div style="display: flex; align-items: center; justify-content: center;">
+    <div style="width: 60%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1>{{recipe.name}}</h1>
+        {% if recipe.image %}
+        <img src="{{recipe.image}}" alt="{{recipe.name}}" style="width: 50%;" />
+        {% endif %}
+        <div style="display: flex; flex-direction: row; gap: 4rem;">
+            <div style="display: flex; flex-direction: column; flex:1">
+                <h2>Ingredients</h2>
+
+                <ul style="margin: 0;">
+                    {% for ingredient in recipe.ingredients %}
+                    <li>{{ingredient}}</li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+            <div style=" display: flex; flex-direction: column; flex:3">
+                <h2>Steps</h2>
+                <div>
+                    {% for step in recipe.steps %}
+                    <b>Step {{ loop.index }}</b>
+                    <p>{{step}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
